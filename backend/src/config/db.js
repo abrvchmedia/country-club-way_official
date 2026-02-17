@@ -1,18 +1,22 @@
 import mongoose from 'mongoose';
 
-let isConnected = false;
+let cachedConnection = null;
 
 export const connectDB = async () => {
-  if (isConnected) {
+  if (cachedConnection && mongoose.connection.readyState === 1) {
     console.log('Using existing MongoDB connection');
-    return;
+    return cachedConnection;
   }
 
   try {
+    mongoose.set('strictQuery', true);
+    
     const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      bufferCommands: false,
+      bufferCommands: true,
+      serverSelectionTimeoutMS: 5000,
     });
-    isConnected = conn.connections[0].readyState === 1;
+    
+    cachedConnection = conn;
     console.log(`MongoDB Connected: ${conn.connection.host}`);
     return conn;
   } catch (error) {
