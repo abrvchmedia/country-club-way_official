@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import TopBar from './components/TopBar';
 import Hero from './components/Hero';
 import Welcome from './components/Welcome';
@@ -16,6 +17,7 @@ function App() {
       <Documents />
       <ScheduleTour />
       <Footer />
+      <Analytics />
     </div>
   );
 }
