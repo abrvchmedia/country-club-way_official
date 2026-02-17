@@ -8,6 +8,7 @@ const plansData = {
   planA: {
     title: 'Plan A',
     image: planAImage,
+    floorPlan: '/docs/floor-plan-unit-a.png',
     stats: {
       bedrooms: 3,
       bathrooms: 3,
@@ -24,6 +25,7 @@ const plansData = {
   planB: {
     title: 'Plan B',
     image: planBImage,
+    floorPlan: '/docs/floor-plan-unit-b.png',
     stats: {
       bedrooms: 4,
       bathrooms: 3.5,
@@ -123,10 +125,12 @@ const Townhomes = () => {
               {/* Left Column - Floor Plan */}
               <div>
                 <h4 className="text-2xl font-bold font-playfair mb-6">Floor Plan</h4>
-                <div className="bg-gray-100 rounded-lg p-8 mb-6 flex items-center justify-center h-64">
-                  <p className="text-gray-500 text-center">
-                    Floor plan image will appear here
-                  </p>
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden mb-6">
+                  <img
+                    src={activePlan.floorPlan}
+                    alt={`${activePlan.title} Floor Plan`}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
 
                 {/* Stats Grid */}
