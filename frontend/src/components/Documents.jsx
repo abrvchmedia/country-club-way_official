@@ -15,6 +15,12 @@ const documents = [
     type: 'pdf',
   },
   {
+    title: 'Soil Reports',
+    filename: 'Soil Reports.pdf',
+    path: '/Soil Reports.pdf',
+    type: 'pdf',
+  },
+  {
     title: 'Floor Plan - Unit A',
     filename: 'floor-plan-unit-a.png',
     path: '/docs/floor-plan-unit-a.png',
