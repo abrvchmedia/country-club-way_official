@@ -12,7 +12,7 @@ const plansData = {
     stats: {
       bedrooms: 3,
       bathrooms: 3,
-      sqft: '2,500',
+      sqft: '2,098',
       garage: '2-car attached',
     },
     features: [
@@ -27,9 +27,9 @@ const plansData = {
     image: planBImage,
     floorPlan: '/docs/floor-plan-unit-b.png',
     stats: {
-      bedrooms: 4,
-      bathrooms: 3.5,
-      sqft: '2,850',
+      bedrooms: 3,
+      bathrooms: 2.5,
+      sqft: '2,205',
       garage: '2-car attached',
     },
     features: [
@@ -37,6 +37,23 @@ const plansData = {
       'Luxurious master retreat with separate sitting area',
       'Flexible loft space perfect for home office or entertainment',
       'Covered balcony overlooking the golf course',
+    ],
+  },
+  planC: {
+    title: 'Plan C',
+    image: planBImage,
+    floorPlan: '/docs/floor-plan-unit-c.png',
+    stats: {
+      bedrooms: 3,
+      bathrooms: 3.5,
+      sqft: '2,114',
+      garage: '2-car attached',
+    },
+    features: [
+      'Modern kitchen with high-end appliances and custom cabinetry',
+      'Expansive master bedroom with dual walk-in closets',
+      'Two additional spacious bedrooms with ensuite bathrooms',
+      'Private terraces on both levels for indoor-outdoor living',
     ],
   },
 };
@@ -90,6 +107,22 @@ const Townhomes = () => {
           >
             Plan B
             {activeTab === 'planB' && (
+              <motion.div
+                layoutId="activeTab"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900"
+              />
+            )}
+          </button>
+          <button
+            onClick={() => setActiveTab('planC')}
+            className={`pb-4 px-6 font-semibold text-lg transition-colors relative ${
+              activeTab === 'planC'
+                ? 'text-gray-900'
+                : 'text-gray-400 hover:text-gray-600'
+            }`}
+          >
+            Plan C
+            {activeTab === 'planC' && (
               <motion.div
                 layoutId="activeTab"
                 className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900"
