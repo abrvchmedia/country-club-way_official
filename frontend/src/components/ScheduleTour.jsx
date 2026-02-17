@@ -26,22 +26,34 @@ const ScheduleTour = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      await submitLead(formData);
-      setStatus({
-        type: 'success',
-        message: 'Thank you! We will contact you shortly.',
+      // Use Formspree for instant form handling
+      const response = await fetch('https://formspree.io/f/xanyrgko', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: '',
-      });
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: 'Thank you! We will contact you shortly.',
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to submit');
+      }
     } catch (error) {
       setStatus({
         type: 'error',
-        message: error.message || 'Something went wrong. Please try again.',
+        message: 'Something went wrong. Please email us directly at cmartinet@gcanyonrealty.com',
       });
     } finally {
       setIsSubmitting(false);
