@@ -3,27 +3,15 @@ import { FaFileAlt, FaDownload, FaImage } from 'react-icons/fa';
 
 const documents = [
   {
-    title: 'Plat Map',
-    filename: 'plat-map.pdf',
-    path: '/docs/plat-map.pdf',
-    type: 'pdf',
-  },
-  {
     title: 'CC&Rs',
-    filename: 'ccrs.pdf',
-    path: '/docs/ccrs.pdf',
+    filename: 'Recorded CC&Rs.pdf',
+    path: '/Recorded CC&Rs .pdf',
     type: 'pdf',
   },
   {
-    title: 'Public Report',
-    filename: 'public-report.pdf',
-    path: '/docs/public-report.pdf',
-    type: 'pdf',
-  },
-  {
-    title: 'More Information',
-    filename: 'more-information.pdf',
-    path: '/docs/more-information.pdf',
+    title: 'Bylaws',
+    filename: 'Executed Bylaws.pdf',
+    path: '/Executed Bylaws .pdf',
     type: 'pdf',
   },
   {
@@ -64,7 +52,7 @@ const Documents = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {documents.map((doc, index) => (
             <motion.a
               key={doc.filename}
