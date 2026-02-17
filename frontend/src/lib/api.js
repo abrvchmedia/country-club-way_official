@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://country-club-way-backend.vercel.app';
+const API_URL = 'https://country-club-way-backend.vercel.app';
 
 console.log('API_URL:', API_URL); // Debug log
 
