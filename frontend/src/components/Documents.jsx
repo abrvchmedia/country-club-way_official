@@ -1,26 +1,48 @@
 import { motion } from 'framer-motion';
-import { FaFileAlt, FaDownload } from 'react-icons/fa';
+import { FaFileAlt, FaDownload, FaImage } from 'react-icons/fa';
 
 const documents = [
   {
     title: 'Plat Map',
     filename: 'plat-map.pdf',
     path: '/docs/plat-map.pdf',
+    type: 'pdf',
   },
   {
     title: 'CC&Rs',
     filename: 'ccrs.pdf',
     path: '/docs/ccrs.pdf',
+    type: 'pdf',
   },
   {
     title: 'Public Report',
     filename: 'public-report.pdf',
     path: '/docs/public-report.pdf',
+    type: 'pdf',
   },
   {
     title: 'More Information',
     filename: 'more-information.pdf',
     path: '/docs/more-information.pdf',
+    type: 'pdf',
+  },
+  {
+    title: 'Floor Plan - Unit A',
+    filename: 'floor-plan-unit-a.png',
+    path: '/docs/floor-plan-unit-a.png',
+    type: 'image',
+  },
+  {
+    title: 'Floor Plan - Unit B',
+    filename: 'floor-plan-unit-b.png',
+    path: '/docs/floor-plan-unit-b.png',
+    type: 'image',
+  },
+  {
+    title: 'Floor Plan - Unit C',
+    filename: 'floor-plan-unit-c.png',
+    path: '/docs/floor-plan-unit-c.png',
+    type: 'image',
   },
 ];
 
@@ -42,7 +64,7 @@ const Documents = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {documents.map((doc, index) => (
             <motion.a
               key={doc.filename}
@@ -61,7 +83,11 @@ const Documents = () => {
               </div>
               
               <div className="flex items-start gap-4">
-                <FaFileAlt className="text-4xl text-gray-400" />
+                {doc.type === 'pdf' ? (
+                  <FaFileAlt className="text-4xl text-gray-400" />
+                ) : (
+                  <FaImage className="text-4xl text-gray-400" />
+                )}
                 <div>
                   <h3 className="font-semibold text-lg mb-1">{doc.title}</h3>
                   <p className="text-sm text-gray-500">{doc.filename}</p>
