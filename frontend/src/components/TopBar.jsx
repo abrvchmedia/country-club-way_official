@@ -25,10 +25,10 @@ const TopBar = () => {
               Contact
             </button>
             <a 
-              href="tel:+14805551234" 
+              href="tel:+14805250031" 
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
             >
-              (480) 555-1234
+              (480) 525-0031
             </a>
           </div>
         </div>

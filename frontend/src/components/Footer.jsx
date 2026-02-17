@@ -20,16 +20,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>1234 Country Club Way</p>
-              <p>Tempe, AZ 85281</p>
+              <p>3250 Country Club Way</p>
+              <p>Tempe, AZ 85282</p>
               <p className="pt-2">
-                <a href="tel:+14805551234" className="hover:text-white transition-colors">
-                  (480) 555-1234
+                <a href="tel:+14805250031" className="hover:text-white transition-colors">
+                  (480) 525-0031
                 </a>
               </p>
               <p>
-                <a href="mailto:info@countryclubway.com" className="hover:text-white transition-colors">
-                  info@countryclubway.com
+                <a href="mailto:cmartinet@gcanyonrealty.com" className="hover:text-white transition-colors">
+                  cmartinet@gcanyonrealty.com
                 </a>
               </p>
             </div>
