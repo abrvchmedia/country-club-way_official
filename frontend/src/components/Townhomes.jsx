@@ -111,15 +111,6 @@ const Townhomes = () => {
               {activePlan.title}
             </h3>
 
-            {/* Hero Image */}
-            <div className="mb-12 rounded-lg overflow-hidden">
-              <img
-                src={activePlan.image}
-                alt={activePlan.title}
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
-
             {/* Two Column Layout */}
             <div className="grid md:grid-cols-2 gap-12">
               {/* Left Column - Floor Plan */}
